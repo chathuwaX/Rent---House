@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Book a house or schedule a visit. Contact us for rental inquiries in Negombo, Sri Lanka.">
+    <title>Book a House – Negombo House Rentals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head>
+
+<body>
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="javascript:history.back()" style="color: var(--accent); margin-right: 15px; font-weight: bold; font-size: 1.1rem; display: flex; align-items: center;" aria-label="Go Back">← Back</a>
+            <a href="index.html" class="nav-brand">
+                <span class="logo-icon">🏠</span>
+                <h1>Negombo<span>Rentals</span></h1>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="houses.html">Houses</a>
+                <a href="booking.html" class="active">Book Now</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── Page Header ─────────────────────────────────────── -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Book a House</h1>
+            <p>Fill out the form below to book your preferred property or schedule a visit. We'll get back to you within
+                24 hours.</p>
+        </div>
+    </section>
+
+    <!-- ── Booking Content ─────────────────────────────────── -->
+    <section class="section">
+        <div class="container">
+            <div class="booking-content">
+                <!-- Booking Form -->
+                <div>
+                    <div class="form-card">
+                        <h3>📋 Booking Request Form</h3>
+                        <form id="bookingFormPage">
+                            <div class="form-group">
+                                <label for="selectHouse">Select a House *</label>
+                                <select id="selectHouse" name="house_id" required>
+                                    <option value="">-- Choose a property --</option>
+                                </select>
+                                <div class="error-msg" id="selectHouseError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bpName">Full Name *</label>
+                                <input type="text" id="bpName" name="full_name" placeholder="Enter your full name"
+                                    required>
+                                <div class="error-msg" id="bpNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bpPhone">Phone Number *</label>
+                                <input type="tel" id="bpPhone" name="phone" placeholder="+94 XX XXX XXXX" required>
+                                <div class="error-msg" id="bpPhoneError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bpEmail">Email Address *</label>
+                                <input type="email" id="bpEmail" name="email" placeholder="your@email.com" required>
+                                <div class="error-msg" id="bpEmailError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bpDate">Preferred Visit Date</label>
+                                <input type="date" id="bpDate" name="preferred_date">
+                            </div>
+                            <div class="form-group">
+                                <label for="bpMessage">Message</label>
+                                <textarea id="bpMessage" name="message"
+                                    placeholder="Any special requirements, questions, or preferred time for visit..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">Submit Booking
+                                Request</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info Sidebar -->
+                <div class="booking-info">
+                    <h3>Need Help?</h3>
+                    <p>Don't hesitate to reach out to us directly. Our team is always happy to help you find the perfect
+                        home.</p>
+                    <div class="contact-details">
+                        <ul>
+                            <li>
+                                <div class="icon">📍</div>
+                                <div>
+                                    <strong>Address</strong><br>
+                                    42 Beach Road, Negombo, Sri Lanka
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">📞</div>
+                                <div>
+                                    <strong>Phone</strong><br>
+                                    +94 31 223 4567
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">✉️</div>
+                                <div>
+                                    <strong>Email</strong><br>
+                                    indrajithhomelk@gmail.com
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">🕐</div>
+                                <div>
+                                    <strong>Office Hours</strong><br>
+                                    Monday – Saturday: 9 AM – 6 PM
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Message Form -->
+                    <div class="form-card" style="margin-top: var(--space-xl);">
+                        <h3>💬 Quick Message</h3>
+                        <form id="quickMessageForm">
+                            <div class="form-group">
+                                <label for="qmName">Your Name *</label>
+                                <input type="text" id="qmName" name="full_name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="qmEmail">Email *</label>
+                                <input type="email" id="qmEmail" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="qmMessage">Message *</label>
+                                <textarea id="qmMessage" name="message" placeholder="How can we help?"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <h4>🏠 NegomboRentals</h4>
+                    <p>Your trusted partner for finding the perfect rental home in Negombo, Sri Lanka.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="houses.html">Houses</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Properties</h4>
+                    <ul>
+                        <li><a href="house-details.html?id=1">DALUWAKOTUWA VILLA</a></li>
+                        <li><a href="house-details.html?id=2">KOCHCHIKADE VILLA</a></li>
+                        <li><a href="house-details.html?id=3">PALANGATHURE VILLA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📍 Negombo, Sri Lanka</li>
+                        <li>📞 +33665206412</li>
+                        <li>✉️ indrajithhomelk@gmail.com</li>
+                        <li>🕐 24 hours available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NegomboRentals. All rights reserved.</p>
+                <p>Designed with VC Developer in Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

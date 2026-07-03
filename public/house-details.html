@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="View detailed information about this rental property in Negombo, Sri Lanka. See photos, facilities, pricing, and book your visit.">
+    <title>House Details – Negombo House Rentals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head>
+
+<body>
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="javascript:history.back()" style="color: var(--accent); margin-right: 15px; font-weight: bold; font-size: 1.1rem; display: flex; align-items: center;" aria-label="Go Back">← Back</a>
+            <a href="index.html" class="nav-brand">
+                <span class="logo-icon">🏠</span>
+                <h1>Negombo<span>Rentals</span></h1>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="houses.html" class="active">Houses</a>
+                <a href="booking.html">Book Now</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── Detail Hero ─────────────────────────────────────── -->
+    <div class="detail-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>›</span>
+                <a href="houses.html">Houses</a> <span>›</span>
+                <span id="breadcrumbTitle">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Main Content ────────────────────────────────────── -->
+    <section class="section">
+        <div class="container">
+            <!-- Image Gallery -->
+            <div class="gallery" id="gallery">
+                <div class="gallery-main" id="galleryMain">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                <button class="gallery-btn prev" id="galleryPrev" aria-label="Previous image">‹</button>
+                <button class="gallery-btn next" id="galleryNext" aria-label="Next image">›</button>
+                <div class="gallery-thumbs" id="galleryThumbs"></div>
+            </div>
+
+            <!-- Detail Content -->
+            <div class="detail-content">
+                <!-- Left: Info -->
+                <div class="detail-info">
+                    <h2 id="houseTitle">Loading...</h2>
+                    <div class="detail-price" id="housePrice">...</div>
+                    <p class="detail-description" id="houseDescription">Loading property details...</p>
+                    
+                    <div class="more-info-section" style="margin: var(--space-lg) 0;">
+                        <a id="googleProfileBtn" href="#" target="_blank" class="btn btn-primary" style="display: none; align-items: center; gap: 8px; width: fit-content;">
+                            <span style="font-size: 1.2em;">📍</span> View Google Profile
+                        </a>
+                    </div>
+
+                    <div class="section-header" style="text-align: left; margin-bottom: var(--space-xl);">
+                        <div class="subtitle">Amenities</div>
+                        <h3>Facilities & Features</h3>
+                    </div>
+                    <div class="facilities-grid" id="facilitiesGrid"></div>
+                </div>
+
+                <!-- Right: Sidebar Forms -->
+                <div class="sidebar">
+                    <!-- Booking Form -->
+                    <div class="form-card">
+                        <h3>📅 Book This Property</h3>
+                        <form id="bookingForm">
+                            <input type="hidden" id="bookingHouseId" name="house_id">
+                            <div class="form-group">
+                                <label for="bookingName">Full Name *</label>
+                                <input type="text" id="bookingName" name="full_name" placeholder="Enter your full name"
+                                    required>
+                                <div class="error-msg" id="bookingNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingPhone">Phone Number *</label>
+                                <input type="tel" id="bookingPhone" name="phone" placeholder="+94 XX XXX XXXX" required>
+                                <div class="error-msg" id="bookingPhoneError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingEmail">Email Address *</label>
+                                <input type="email" id="bookingEmail" name="email" placeholder="your@email.com"
+                                    required>
+                                <div class="error-msg" id="bookingEmailError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingDate">Preferred Visit Date</label>
+                                <input type="date" id="bookingDate" name="preferred_date">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingMessage">Message (Optional)</label>
+                                <textarea id="bookingMessage" name="message"
+                                    placeholder="Any special requirements or questions..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit Booking Request</button>
+                        </form>
+                    </div>
+
+                    <!-- Message Form -->
+                    <div class="form-card">
+                        <h3>✉️ Send a Message</h3>
+                        <form id="messageForm">
+                            <input type="hidden" id="msgHouseId" name="house_id">
+                            <div class="form-group">
+                                <label for="msgName">Full Name *</label>
+                                <input type="text" id="msgName" name="full_name" placeholder="Enter your full name"
+                                    required>
+                                <div class="error-msg" id="msgNameError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="msgPhone">Phone Number</label>
+                                <input type="tel" id="msgPhone" name="phone" placeholder="+94 XX XXX XXXX">
+                            </div>
+                            <div class="form-group">
+                                <label for="msgEmail">Email Address *</label>
+                                <input type="email" id="msgEmail" name="email" placeholder="your@email.com" required>
+                                <div class="error-msg" id="msgEmailError"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="msgMessage">Your Message *</label>
+                                <textarea id="msgMessage" name="message"
+                                    placeholder="Tell us what you'd like to know..." required></textarea>
+                                <div class="error-msg" id="msgMessageError"></div>
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <h4>🏠 NegomboRentals</h4>
+                    <p>Your trusted partner for finding the perfect rental home in Negombo, Sri Lanka.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="houses.html">Houses</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Properties</h4>
+                    <ul>
+                        <li><a href="house-details.html?id=1">DALUWAKOTUWA VILLA</a></li>
+                        <li><a href="house-details.html?id=2">KOCHCHIKADE VILLA</a></li>
+                        <li><a href="house-details.html?id=3">PALANGATHURE VILLA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📍 Negombo, Sri Lanka</li>
+                        <li>📞 +33665206412</li>
+                        <li>✉️ indrajithhomelk@gmail.com</li>
+                        <li>🕐 24 hours available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NegomboRentals. All rights reserved.</p>
+                <p>Designed with VC Developer in Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/house-details.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse all houses available for monthly rent in Negombo, Sri Lanka. Modern family homes, beach villas, and spacious garden homes.">
+    <title>Houses for Rent – Negombo House Rentals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head>
+
+<body>
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="javascript:history.back()" style="color: var(--accent); margin-right: 15px; font-weight: bold; font-size: 1.1rem; display: flex; align-items: center;" aria-label="Go Back">← Back</a>
+            <a href="index.html" class="nav-brand">
+                <span class="logo-icon">🏠</span>
+                <h1>Negombo<span>Rentals</span></h1>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="houses.html" class="active">Houses</a>
+                <a href="booking.html">Book Now</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── Page Header ─────────────────────────────────────── -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Houses for Rent</h1>
+            <p>Explore our collection of rental homes in Negombo. Find the perfect place that suits your lifestyle and
+                budget.</p>
+        </div>
+    </section>
+
+    <!-- ── Houses Listing ──────────────────────────────────── -->
+    <section class="section">
+        <div class="container">
+            <div class="houses-grid" id="housesGrid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────────────────────── -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Can't Decide? Let Us Help!</h2>
+            <p>Send us a message or book a visit to see our properties in person.</p>
+            <div class="hero-buttons">
+                <a href="booking.html" class="btn btn-primary btn-lg">Book a Visit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <h4>🏠 NegomboRentals</h4>
+                    <p>Your trusted partner for finding the perfect rental home in Negombo, Sri Lanka.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="houses.html">Houses</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Properties</h4>
+                    <ul>
+                        <li><a href="house-details.html?id=1">DALUWAKOTUWA VILLA</a></li>
+                        <li><a href="house-details.html?id=2">KOCHCHIKADE VILLA</a></li>
+                        <li><a href="house-details.html?id=3">PALANGATHURE VILLA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📍 Negombo, Sri Lanka</li>
+                        <li>📞 +33665206412</li>
+                        <li>✉️ indrajithhomelk@gmail.com</li>
+                        <li>🕐 24 hours available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NegomboRentals. All rights reserved.</p>
+                <p>Designed with VC Developer in Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/houses.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHousesListing();
+        });
+    </script>
+</body>
+
+</html>

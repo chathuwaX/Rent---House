@@ -1,0 +1,4 @@
+PassengerEnabled on
+PassengerAppRoot /home/ethan/public_html
+PassengerAppType node
+PassengerStartupFile app.js
