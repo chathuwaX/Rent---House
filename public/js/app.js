@@ -133,14 +133,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function createHouseCard(house) {
     const thumbnail = house.thumbnail || 'images/house1-1.jpg';
     return `
-    <div class="house-card fade-in" onclick="window.location.href='house-details.html?id=${house.id}'">
+    <div class="house-card fade-in">
       <div class="house-card__image">
-        <img src="${thumbnail}" alt="${house.title}" loading="lazy">
+        <a href="house-details.html?id=${house.id}">
+            <img src="${thumbnail}" alt="${house.title}" loading="lazy">
+        </a>
         <div class="house-card__badge">For Rent</div>
       </div>
       <div class="house-card__body">
         <div class="house-card__location">📍 ${house.location || 'Negombo, Sri Lanka'}</div>
-        <h3 class="house-card__title">${house.title}</h3>
+        <h3 class="house-card__title"><a href="house-details.html?id=${house.id}" style="color:inherit; text-decoration:none;">${house.title}</a></h3>
         <p class="house-card__description">${house.description || ''}</p>
         <div class="house-card__facilities">
           <div class="facility"><span class="facility-icon">🛏️</span> ${house.bedrooms} Beds</div>

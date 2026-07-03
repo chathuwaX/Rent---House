@@ -9,12 +9,10 @@ let houseImages = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const houseId = params.get('id');
+    let houseId = params.get('id');
 
     if (!houseId) {
-        showToast('No house selected. Redirecting...', 'warning');
-        setTimeout(() => window.location.href = 'houses.html', 2000);
-        return;
+        houseId = '1'; // Default to first house if opened directly without ID
     }
 
     const house = getHouseById(houseId);
